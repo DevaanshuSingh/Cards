@@ -31,35 +31,72 @@
 
         img {
             width: 10%;
+            height: 70%;
             margin: 1%;
             filter: brightness(0);
-            transition: all 1.5s ease;
+            transition: all 1s ease;
+            cursor: pointer;
         }
 
+        /* for Before */
+        img:has(+*:hover) {
+            filter: brightness(.4);
+            transform: scale(1.2);
+            transform: rotateY(50deg);
+            z-index: 3;
+        }
+
+        img:has(+*+*:hover) {
+            filter: brightness(.2);
+            transform: scale(1.1);
+            /* transform: rotateZ(25deg); */
+            z-index: 2;
+        }
+
+        img:has(+*+*+*:hover) {
+            filter: brightness(.1);
+            transform: scale(1);
+            z-index: 1;
+        }
+
+
+        /*Center/Main*/
         img:hover {
             filter: brightness(1);
+            transform: scale(1.3);
+            z-index: 4;
         }
 
+
+        /* for After */
         img:hover+img {
-            filter: brightness(0.6);
+            filter: brightness(0.4);
+            transform: scale(1.2);
+            transform: rotateY(-50deg);
+
+            z-index: 3;
         }
 
         img:hover+img+img {
-            filter: brightness(0.4);
+            filter: brightness(0.2);
+            transform: scale(1.1);
+            /* transform: rotateZ(-25deg); */
+            z-index: 2;
         }
 
         img:hover+img+img+img {
-            filter: brightness(0.2);
+            filter: brightness(0.1);
+            transform: scale(1);
+            z-index: 1;
+
         }
 
 
 
-
-        .card {
+        /* .card {
             background-color: rgba(0, 0, 0, 0);
-            /* height: 50%; */
             border: none;
-        }
+        } */
     </style>
 
 </head>
@@ -92,6 +129,16 @@
 
 
     <div class="container">
+        <!-- <img src="codernaccotax.png" class="img-fluid" alt="codernaccotax(CNAT)">
+        <img src="codernaccotax.png" class="img-fluid" alt="codernaccotax(CNAT)">
+        <img src="Swadeep.png" class="img-fluid" alt="codernaccotax(CNAT)">
+        <img src="Sir.jpeg" class="img-fluid" alt="codernaccotax(CNAT)">
+        <img src="Kinjal_Dada.jpeg" class="img-fluid" alt="codernaccotax(CNAT)">
+        <img src="Shiva.jpeg" class="img-fluid" alt="codernaccotax(CNAT)">
+        <img src="codernaccotax.png" class="img-fluid" alt="codernaccotax(CNAT)">
+        <img src="codernaccotax.png" class="img-fluid" alt="codernaccotax(CNAT)"> -->
+
+
         <img src="codernaccotax.png" class="img-fluid" alt="codernaccotax(CNAT)">
         <img src="codernaccotax.png" class="img-fluid" alt="codernaccotax(CNAT)">
         <img src="codernaccotax.png" class="img-fluid" alt="codernaccotax(CNAT)">
@@ -99,7 +146,7 @@
         <img src="codernaccotax.png" class="img-fluid" alt="codernaccotax(CNAT)">
         <img src="codernaccotax.png" class="img-fluid" alt="codernaccotax(CNAT)">
         <img src="codernaccotax.png" class="img-fluid" alt="codernaccotax(CNAT)">
-        <img src="codernaccotax.png" class="img-fluid" alt="codernaccotax(CNAT)">
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
